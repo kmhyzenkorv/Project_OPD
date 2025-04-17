@@ -4,8 +4,8 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 start_frontend() {
-  echo -e "${GREEN}🔷 Запуск frontend (Svelte)...${NC}"
-  cd frontend
+  echo -e "${GREEN}🔷 Запуск Front (Svelte)...${NC}"
+  cd Front
   npm install
   npm run dev &
   FRONT_PID=$!
@@ -13,10 +13,9 @@ start_frontend() {
 }
 
 start_backend() {
-  echo -e "${GREEN}🔶 Запуск backend (NestJS)...${NC}"
-  cd backend
-  npm install
-  npm run start:dev &
+  echo -e "${GREEN}🔶 Запуск Back (NestJS)...${NC}"
+  cd Back
+  docker compose up --build
   BACK_PID=$!
   cd ..
 }
