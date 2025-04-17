@@ -1,0 +1,42 @@
+# === Общие исключения ===
+node_modules/
+dist/
+build/
+.env
+.env.*.local
+*.log
+*.tmp
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# === NestJS (бэкенд) ===
+# Скомпилированные файлы
+Back/dist/
+Back/node_modules/
+Back/coverage/
+Back/.env
+Back/*.log
+Back/*.tsbuildinfo
+
+# pm2 / logs
+Back/pids/
+Back/logs/
+Back/npm-debug.log*
+
+# === Svelte (фронт) ===
+Front/node_modules/
+Front/.svelte-kit/
+Front/build/
+Front/.env
+Front/.env.local
+Front/.vercel/
+Front/.netlify/
+Front/.cache/
+Front/.vite/
+
+# IDE и редакторы
+.idea/
+.vscode/
+*.code-workspace
