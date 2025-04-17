@@ -45,6 +45,14 @@ chmod +x start.sh
 ./start.sh
 ```
 
+## WSL
+
+```bash
+sed -i 's/\r$//' start.sh
+chmod +x start.sh
+./start.sh
+```
+
 > При нажатии Ctrl+C оба процесса будут завершены автоматически
 
 ---
