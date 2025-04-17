@@ -15,7 +15,7 @@ start_frontend() {
 start_backend() {
   echo -e "${GREEN}🔶 Запуск Back (NestJS)...${NC}"
   cd Back
-  docker compose up --build
+  sudo docker compose up --build
   BACK_PID=$!
   cd ..
 }
