@@ -1,22 +1,17 @@
 <script>
-    // 1. Состояние и поля форм
     let isLoginMode = true;
   
-    // поля для входа
     let loginEmail = '';
     let loginPassword = '';
   
-    // поля для регистрации
     let registerEmail = '';
     let registerPassword = '';
     let registerConfirmPassword = '';
   
-    // 2. Переключение между входом и регистрацией
     function toggleMode() {
       isLoginMode = !isLoginMode;
     }
   
-    // 3. Обработчики форм
     async function handleLogin() {
       const res = await fetch('http://localhost:3000/auth/login', {
         method: 'POST',
@@ -115,7 +110,6 @@
               placeholder="Минимум 6 символов"
             />
           </label>
-          <!-- поле «Повтор пароля» остаётся внутри этого же {:else}-блока -->
         {/if}
         </label>
   
@@ -148,11 +142,10 @@
   </main>
   
   <style>
-    /* Корневые стили */
     :global(body) {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #eaf2ff; /* светло-голубой фон */
+      background: #eaf2ff;
     }
     
     header {
@@ -175,7 +168,6 @@
         gap: 20px;
     }
 
-    /* Контейнер по центру */
     .auth-container {
       display: flex;
       align-items: center;
@@ -183,7 +175,6 @@
       height: 100vh;
     }
   
-    /* Карточка формы */
     .auth-card {
       background: #ffffff;
       border-radius: 8px;
@@ -199,7 +190,6 @@
       font-size: 1.5rem;
     }
   
-    /* Поля ввода */
     .field {
       display: block;
       margin-bottom: 1rem;
@@ -222,7 +212,6 @@
       border-color: #1e3a8a;
     }
   
-    /* Основная кнопка */
     .btn-primary {
       width: 100%;
       padding: 0.75rem;
@@ -238,7 +227,6 @@
       background: #162c6a;
     }
   
-    /* Кнопка переключения */
     .btn-toggle {
       margin-top: 1rem;
       background: transparent;
