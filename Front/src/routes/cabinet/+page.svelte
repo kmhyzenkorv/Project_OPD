@@ -1,16 +1,35 @@
 <script>
-    let name = "Игорь Иванов";
-    let email = "igor@example.com";
-    let phone = "+7 (999) 123-45-67";
-    let address = "г. Москва, ул. Ленина, д. 10";
+    let name = '';
+    let orders = '';
 
-    let orders = [
-        { id: 1, date: "25 марта 2025", status: "Доставлено" },
-        { id: 2, date: "1 апреля 2025", status: "В процессе" },
-        { id: 3, date: "10 марта 2025", status: "Доставлено" },
-    ];
+    async function AuthInfo() {
+      const res = await fetch('http://localhost:3000/auth/login', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({email: name})
+      })
+      if (res.ok) {
+        console.log(res)
+      } else {
+        console.log(res)
+      }
+      console.log('Login:', {email: name});
+    }
 
-    
+    async function Locations() {
+      const res = await fetch('http://localhost:3000/locations/getAll', {
+        method: 'GET',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({orders})
+      })
+      if (res.ok) {
+        console.log(res)
+      } else {
+        console.log(res)
+      }
+    }
 </script>
 
 <style>
@@ -87,11 +106,7 @@
     
     <div class="profile-section">
         <h2>Информация о профиле</h2>
-        <div class="profile-info"><strong>Имя:</strong> {name}</div>
-        <div class="profile-info"><strong>Email:</strong> {email}</div>
-        <div class="profile-info"><strong>Телефон:</strong> {phone}</div>
-        <div class="profile-info"><strong>Адрес:</strong> {address}</div>
-        <button class="search-button">Редактировать информацию</button>
+        <div class="profile-info"><strong>Электронная почта:</strong> {name}</div>
     </div>
 
     <div class="profile-section">
@@ -101,11 +116,6 @@
                 <li>Заказ #{order.id} - {order.date} - Статус: {order.status}</li>
             {/each}
         </ul>
-    </div>
-
-    <div class="profile-section">
-        <h2>Настройки безопасности</h2>
-        <button class="search-button">Сменить пароль</button>
     </div>
 </div>
 

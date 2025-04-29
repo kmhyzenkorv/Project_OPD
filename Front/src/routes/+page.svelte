@@ -1,7 +1,7 @@
 <header>
     <div class="logo">Мой Магазин</div>
     <ul class="nav-links">
-        <li><a href="#">Главная</a></li>
+        <li><a href="/">Главная</a></li>
         <li><a href="#">Категории</a></li>
         <li><a href="#">Корзина</a></li>
         <li><a href="/cabinet">Личный кабинет</a></li>
@@ -85,5 +85,21 @@
         { id: 2, name: "Товар 2", price: 2000, description: "Описание товара 2" },
         { id: 3, name: "Товар 3", price: 3000, description: "Описание товара 3" },
         { id: 4, name: "Товар 4", price: 4000, description: "Описание товара 4" },
+        { id: 1, name: "Товар 1", price: 1000, description: "Описание товара 1" },
+        { id: 2, name: "Товар 2", price: 2000, description: "Описание товара 2" },
+        { id: 3, name: "Товар 3", price: 3000, description: "Описание товара 3" },
+        { id: 4, name: "Товар 4", price: 4000, description: "Описание товара 4" },
+        { id: 1, name: "Товар 1", price: 1000, description: "Описание товара 1" },
+        { id: 2, name: "Товар 2", price: 2000, description: "Описание товара 2" },
+        { id: 3, name: "Товар 3", price: 3000, description: "Описание товара 3" },
+        { id: 4, name: "Товар 4", price: 4000, description: "Описание товара 4" },
+        { id: 1, name: "Товар 1", price: 1000, description: "Описание товара 1" },
+        { id: 2, name: "Товар 2", price: 2000, description: "Описание товара 2" },
+        { id: 3, name: "Товар 3", price: 3000, description: "Описание товара 3" },
+        { id: 4, name: "Товар 4", price: 4000, description: "Описание товара 4" },
+        { id: 1, name: "Товар 1", price: 1000, description: "Описание товара 1" },
+        { id: 2, name: "Товар 2", price: 2000, description: "Описание товара 2" },
+        { id: 3, name: "Товар 3", price: 3000, description: "Описание товара 3" },
+        { id: 4, name: "Товар 4", price: 4000, description: "Описание товара 4" },  
     ];
 </script>
