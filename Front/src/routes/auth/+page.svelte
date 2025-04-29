@@ -7,7 +7,6 @@
     let loginPassword = '';
   
     // поля для регистрации
-    let registerUsername = '';
     let registerEmail = '';
     let registerPassword = '';
     let registerConfirmPassword = '';
@@ -18,8 +17,18 @@
     }
   
     // 3. Обработчики форм
-    function handleLogin() {
-      // Здесь добавить вызов API для авторизации
+    async function handleLogin() {
+      const res = await fetch('http://localhost:3000/auth/login', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: registerEmail, password: registerPassword })
+      })
+      if (res.ok) {
+        console.log(res)
+      } else {
+        console.log(res)
+      }
       console.log('Login:', { email: loginEmail, password: loginPassword });
     }
   
@@ -30,6 +39,7 @@
       }
       const res = await fetch('http://localhost:3000/auth/register', {
         method: 'POST',
+        credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: registerEmail, password: registerPassword })
       })
@@ -40,26 +50,24 @@
       }
     }
   </script>
-  
+  <header>
+    <div class="logo">Мой Магазин</div>
+    <ul class="nav-links">
+        <li><a href="/  ">Главная</a></li>
+        <li><a href="#">Категории</a></li>
+        <li><a href="#">Корзина</a></li>
+        <li><a href="/cabinet">Личный кабинет</a></li>
+    </ul>
+</header>
   <main class="auth-container">
+    
     <div class="auth-card">
       <h2 class="title">
         {#if isLoginMode}Вход в аккаунт{:else}Создать аккаунт{/if}
       </h2>
   
       <form on:submit|preventDefault={isLoginMode ? handleLogin : handleRegister}>
-        {#if !isLoginMode}
-          <label class="field">
-            <span>Имя пользователя</span>
-            <input
-              type="text"
-              bind:value={registerUsername}
-              required
-              placeholder="Введите имя"
-            />
-          </label>
-        {/if}
-  
+
         <label class="field">
           {#if isLoginMode}
           <label class="field">
@@ -146,7 +154,27 @@
       font-family: Arial, sans-serif;
       background: #eaf2ff; /* светло-голубой фон */
     }
-  
+    
+    header {
+        background-color: #389ad3;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+    }
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+    }
+
     /* Контейнер по центру */
     .auth-container {
       display: flex;
