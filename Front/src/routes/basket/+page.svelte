@@ -2,18 +2,23 @@
     <div class="logo">Мой Магазин</div>
     <ul class="nav-links">
       <li><a href="/">Главная</a></li>
-      <li><a href="/categories">Категории</a></li>
-      <li><a href="/basket">Корзина</a></li>
+      <li><a href="#">Категории</a></li>
+      <li><a href="#">Корзина</a></li>
       <li><a href="/cabinet">Личный кабинет</a></li>
     </ul>
   </header>
   <main>
-    <h1>Добро пожаловать в наш магазин!</h1>
+    <div class="category-header">
+      <h1>Категория: Электроника</h1>
+      <p class="category-desc">
+        Самая популярная современная электроника для дома и офиса.
+      </p>
+    </div>
     <div class="product-list">
-      {#each products as product}
+      {#each categoryProducts as product}
         <div class="product-card">
           <div class="product-image">
-            <img src="https://placehold.co/200x140/png?text=Фото" alt="Фото товара" />
+            <img src="https://placehold.co/200x140/png?text=Фото" alt="{product.name}" />
           </div>
           <h2>{product.name}</h2>
           <p class="price">Цена: <span>{product.price} руб.</span></p>
@@ -38,6 +43,15 @@
       --border-radius: 18px;
       --transition: 0.25s all cubic-bezier(0.4, 0.2, 0.2, 1);
       --font-main: 'Montserrat', Arial, sans-serif;
+    }
+  
+    body {
+      font-family: var(--font-main);
+      background: var(--main-bg);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      color: #252525;
     }
   
     header {
@@ -87,21 +101,32 @@
       max-width: 1120px;
       margin: auto;
     }
-    main h1 {
-      text-align: center;
-      font-size: 2.2rem;
+  
+    .category-header {
+      text-align: left;
+      margin-bottom: 16px;
+      margin-top: 14px;
+      padding-left: 8px;
+    }
+    .category-header h1 {
+      font-size: 2rem;
       font-weight: 700;
-      margin: 24px 0 10px 0;
       color: var(--accent);
       letter-spacing: 1px;
+      margin: 0 0 8px 0;
       text-shadow: 0 2px 6px rgba(56,154,211,0.05);
+    }
+    .category-desc {
+      color: #466389;
+      font-size: 1.08rem;
+      margin-bottom: 4px;
     }
   
     .product-list {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 32px 28px;
-      padding: 32px 8px 28px 8px;
+      padding: 20px 8px 28px 8px;
     }
     .product-card {
       background: var(--card-bg);
@@ -190,31 +215,11 @@
   
     @media (max-width: 700px) {
       main { max-width: 99vw; }
+      .category-header { padding-left: 2vw; }
       .product-list { grid-template-columns: 1fr; }
       header, .footer { padding-left: 3vw; padding-right: 3vw; }
       .product-card { min-height: 260px; padding: 20px 7px 16px 7px; }
       .product-image img { width: 95%; height: 120px; }
     }
   </style>
-<script>    let products = [
-    { id: 1, name: "Товар 1", price: 1000, description: "Описание товара 1" },
-    { id: 2, name: "Товар 2", price: 2000, description: "Описание товара 2" },
-    { id: 3, name: "Товар 3", price: 3000, description: "Описание товара 3" },
-    { id: 4, name: "Товар 4", price: 4000, description: "Описание товара 4" },
-    { id: 1, name: "Товар 1", price: 1000, description: "Описание товара 1" },
-    { id: 2, name: "Товар 2", price: 2000, description: "Описание товара 2" },
-    { id: 3, name: "Товар 3", price: 3000, description: "Описание товара 3" },
-    { id: 4, name: "Товар 4", price: 4000, description: "Описание товара 4" },
-    { id: 1, name: "Товар 1", price: 1000, description: "Описание товара 1" },
-    { id: 2, name: "Товар 2", price: 2000, description: "Описание товара 2" },
-    { id: 3, name: "Товар 3", price: 3000, description: "Описание товара 3" },
-    { id: 4, name: "Товар 4", price: 4000, description: "Описание товара 4" },
-    { id: 1, name: "Товар 1", price: 1000, description: "Описание товара 1" },
-    { id: 2, name: "Товар 2", price: 2000, description: "Описание товара 2" },
-    { id: 3, name: "Товар 3", price: 3000, description: "Описание товара 3" },
-    { id: 4, name: "Товар 4", price: 4000, description: "Описание товара 4" },
-    { id: 1, name: "Товар 1", price: 1000, description: "Описание товара 1" },
-    { id: 2, name: "Товар 2", price: 2000, description: "Описание товара 2" },
-    { id: 3, name: "Товар 3", price: 3000, description: "Описание товара 3" },
-    { id: 4, name: "Товар 4", price: 4000, description: "Описание товара 4" },  
-];</script>  
+  
