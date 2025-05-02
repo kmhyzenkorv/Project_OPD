@@ -1,4 +1,8 @@
 <script>
+  import Header from "../../components/Header.svelte";
+  import Footer from "../../components/Footer.svelte";
+
+
     let categories = [
       {
         name: 'Электроника',
@@ -48,17 +52,7 @@
   </script>
   
   <div class="shop-container">
-    <header>
-      <div class="logo">Мой Магазин</div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="/">Главная</a></li>
-          <li><a href="/categories">Категории</a></li>
-          <li><a href="/cart">Корзина</a></li>
-          <li><a href="/cabinet">Личный кабинет</a></li>
-        </ul>
-      </nav>
-    </header>
+    <Header/>
   
     <main>
       <section id="categories-section">
@@ -98,11 +92,8 @@
         </section>
       {/each}
     </main>
-  
-    <footer class="footer">
-      <p>Все права защищены &copy; 2025 Мой Магазин</p>
-    </footer>
   </div>
+  <Footer/>
   
   
   <style>
@@ -117,54 +108,7 @@
       --transition: 0.25s all cubic-bezier(0.4, 0.2, 0.2, 1);
       --font-main: 'Montserrat', Arial, sans-serif;
     }
-    body {
-      font-family: var(--font-main);
-      background: var(--main-bg);
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      color: #252525;
-    }
-    header {
-      background: var(--accent);
-      box-shadow: var(--shadow-1);
-      padding: 18px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom-left-radius: var(--border-radius);
-      border-bottom-right-radius: var(--border-radius);
-      margin-bottom: 20px;
-      color: #fff;
-    }
-    .logo {
-      font-size: 2rem;
-      font-weight: 600;
-      color: #fff;
-      letter-spacing: 1px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.11);
-    }
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 28px;
-      margin: 0;
-      padding: 0;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
-      font-size: 1.03rem;
-      padding: 7px 18px;
-      border-radius: 14px;
-      transition: var(--transition);
-    }
-    .nav-links a:hover {
-      background: var(--gold);
-      color: #226a95;
-      box-shadow: 0 1px 7px rgba(255,215,0,0.15);
-    }
+    
     main {
       max-width: 1120px;
       margin: auto;
@@ -235,33 +179,13 @@
       padding-left: 8px;
       position: relative;
     }
-    .category-header h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--accent);
-      letter-spacing: 1px;
-      margin: 0 0 8px 0;
-      text-shadow: 0 2px 6px rgba(56,154,211,0.05);
-    }
+    
     .category-desc {
       color: #466389;
       font-size: 1.05rem;
       margin-bottom: 4px;
     }
-    .back-btn {
-      background: none;
-      border: none;
-      color: var(--accent-dark);
-      font-size: 1rem;
-      cursor: pointer;
-      margin-bottom: 6px;
-      margin-left: -3px;
-      transition: color .18s;
-    }
-    .back-btn:hover {
-      color: var(--gold);
-      text-decoration: underline;
-    }
+   
     .product-list {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -294,13 +218,7 @@
       margin-bottom: 14px;
       background: #e2ebf7;
     }
-    .product-card h2 {
-      font-size: 1.22rem;
-      font-weight: 600;
-      color: var(--accent-dark);
-      margin: 0 0 7px 0;
-      text-shadow: 0 2px 6px rgba(56,154,211,0.03);
-    }
+    
     .product-card .price {
       font-size: 1.1rem;
       color: #222;

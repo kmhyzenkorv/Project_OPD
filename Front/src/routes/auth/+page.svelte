@@ -45,15 +45,9 @@
       }
     }
   </script>
-  <header>
-    <div class="logo">Мой Магазин</div>
-    <ul class="nav-links">
-        <li><a href="/  ">Главная</a></li>
-        <li><a href="#">Категории</a></li>
-        <li><a href="#">Корзина</a></li>
-        <li><a href="/cabinet">Личный кабинет</a></li>
-    </ul>
-</header>
+  
+
+
   <main class="auth-container">
     
     <div class="auth-card">
@@ -148,26 +142,6 @@
       background: #eaf2ff;
     }
     
-    header {
-        background-color: #389ad3;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        padding: 10px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .logo {
-        font-size: 24px;
-        font-weight: bold;
-        color: #333;
-    }
-    .nav-links {
-        display: flex;
-        list-style: none;
-        gap: 20px;
-    }
-
     .auth-container {
       display: flex;
       align-items: center;
